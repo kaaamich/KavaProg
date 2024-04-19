@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товари</title>
+    <script>
+        function fetchData() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var data = JSON.parse(this.responseText);
+                    populateTable(data);
+                }
+            };
+            xhttp.open("GET", "http://localhost:8080/products/", true);
+            xhttp.send();
+        }
+
+        function populateTable(data) {
+            var table = document.getElementById("productTable");
+            for (var i = 0; i < data.length; i++) {
+                var row = table.insertRow();
+                var idCell = row.insertCell(0);
+                var titleCell = row.insertCell(1);
+                var linkCell = row.insertCell(2);
+                var descriptionCell = row.insertCell(3);
+                var priceCell = row.insertCell(4);
+                idCell.innerHTML = data[i].id;
+                titleCell.innerHTML = data[i].title;
+                linkCell.innerHTML = '<a href="' + data[i].link + '">Посилання</a>';
+                descriptionCell.innerHTML = data[i].description;
+                priceCell.innerHTML = data[i].price;
+            }
+        }
+    </script>
+</head>
+<body onload="fetchData()">
+    <button><a href = "http://localhost:8080/list/">Export DATA</a></button>
+    <table border="1" id="productTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Назва товару</th>
+                <th>Посилання</th>
+                <th>Опис</th>
+                <th>Ціна</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+</html>

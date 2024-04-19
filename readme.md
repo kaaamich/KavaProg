@@ -39,15 +39,15 @@
 
 **Post запит**
 
-![Post method](Screen\POST_POSTMAN.png)
+![Post method](Screen/POST_POSTMAN.png)
 
 **Get запит**
 
-![Get method](Screen\GET.png)
+![Get method](Screen/GET.png)
 
 **Результат запита**
 
-![Get method](Screen\RESULT.png)
+![Get method](Screen/RESULT.png)
 
 
 
@@ -84,10 +84,10 @@
 
 **Таблиця із кнопкою для експорту**
 
-![Table](Screen\TABLE.png)
+![Table](Screen/TABLE.png)
 
 
 **Результат натискання кнопки**
 
-![Table](Screen\EXPORT.png)
+![Table](Screen/EXPORT.png)
 
